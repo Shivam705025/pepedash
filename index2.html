@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Code Editor</title>
+    <style>
+        #editor {
+            width: 100%;
+            height: 610px;
+            border: none;
+            outline: none;
+        }
+
+        .green-btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+    <script>
+        function runCode() {
+            var code = document.getElementById("editor").value;
+            var output = document.getElementById("output");
+            output.innerHTML = code;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div align="center">
+        <textarea id="editor" style="background-color: transparent; color: green;">
+<!-- Type your Javascript AI code here powered by Pepedash-->
+<!-- A lot of AI tool is yet to come, this is just a demo-->
+<!-- This is an example code-->
+
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport"
+         content="width=device-width, initial-scale=1.0" />
+      <title>Image Classifier using ML5 js</title>
+      <script src=
+         "https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+      <script>
+         var loadFile = function (event) {
+         var image = document.getElementById("image");
+         image.src = URL.createObjectURL(event.target.files[0]);
+         };
+         const classifier = ml5.imageClassifier
+         ("MobileNet", modelLoaded);
+         
+         // When the model is loaded
+         function modelLoaded() {
+         console.log("Model Loaded!");
+         }
+            
+         function predict() {
+         classifier.predict(document.getElementById("image"),
+            function (err, results) {
+                  alert(results[0].label);
+               });
+            }
+         
+      </script>
+   </head>
+   <body>
+      <center>
+         <h1 style="color: green;">PEPEDASH AI</h1>
+         <b>
+         Image Classification using Javascript
+         </b>
+         </br>
+         <img src="" alt="" id="image"
+            width="315px" height="200px" />
+         </br></br>
+         <input type="file" accept="image/*"
+            onchange="loadFile(event)"
+            name="image" id="file" />
+         <button onclick="predict()">Predict</button>
+      </center>
+   </body>
+</html>
+    </textarea>
+    </div>
+    <br>
+    <div align="center">
+        <button class="green-btn" onclick="runCode()">Run Code</button>
+    </div>
+    <div id="output"></div>
+
+</body>
+
+</html>
