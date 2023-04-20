@@ -73,7 +73,15 @@
 				document.getElementById("myButton").click();
 			}
 		}
-	   
+	   const secretKey = process.env.MY_SECRET_KEY;
+	     console.log("This is test for secret key in git hub");
+	    console.log(secretKey);
+	    const secretKey1 = process.env.SKOD;
+	    const secretKey2 = process.env.OPENAI_API_KEY;
+	     console.log(secretKey1);
+	     console.log(secretKey2);
+	    
+	    
 	    var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
