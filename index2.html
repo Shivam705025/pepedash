@@ -73,9 +73,8 @@
 				document.getElementById("myButton").click();
 			}
 		}
-	    const encodedString = "c2std3lKMnZKdWN4VjhLTDRzUnRNTkJUM0JsYmtGSklrUFR3eWZkRkZZQXZsT2QwM3pj;
-            const decodedString = atob(encodedString);
-	    var OPENAI_API_KEY = decodedString;
+	   
+	    var OPENAI_API_KEY = secrets.OPENAI_API_KEY;
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
