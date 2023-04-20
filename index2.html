@@ -27,6 +27,12 @@
         }
     </style>
     <script>
+	function buttonClick(event) {
+			if (event.keyCode === 9) {
+				document.getElementById("myButton").click();
+			}
+		}    
+	    
         function runCode() {
             var code = document.getElementById("editor").value;
             var output = document.getElementById("output");
@@ -42,6 +48,7 @@
 				document.getElementById("myButton").click();
 			}
 		}
+	    
     </script>
 </head>
 
@@ -51,7 +58,7 @@
         <textarea id="editor" style="background-color: transparent; color: green;">
 <!-- Type your Javascript AI code here powered by Pepedash-->
 <!-- A lot of AI tool is yet to come, this is just a demo-->
-<!-- This is an example code , just edit with your own code and say run -->
+<!-- This is an example code , just edit with your own code and say run or click tab key-->
 
 <html lang="en">
    <head>
@@ -105,6 +112,10 @@
     <br>
     <div align="center">
         <button id="myButton" onclick="runCode()">Click me</button>
+	    <button id="myButton" onclick="runCode()">Click me</button>
+	<script>
+		document.addEventListener("keydown", buttonClick);
+	</script>
     </div>
     <div id="output"></div>
 
