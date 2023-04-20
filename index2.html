@@ -32,6 +32,16 @@
             var output = document.getElementById("output");
             output.innerHTML = code;
         }
+        
+        window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+		var recognition = new window.SpeechRecognition();
+		
+		recognition.onresult = function(event) {
+			var transcript = event.results[0][0].transcript;
+			if (transcript.toLowerCase() === "run") {
+				document.getElementById("myButton").click();
+			}
+		}
     </script>
 </head>
 
@@ -41,7 +51,7 @@
         <textarea id="editor" style="background-color: transparent; color: green;">
 <!-- Type your Javascript AI code here powered by Pepedash-->
 <!-- A lot of AI tool is yet to come, this is just a demo-->
-<!-- This is an example code-->
+<!-- This is an example code , just edit with your own code and say run -->
 
 <html lang="en">
    <head>
@@ -94,7 +104,7 @@
     </div>
     <br>
     <div align="center">
-        <button class="green-btn" onclick="runCode()">Run Code</button>
+        <button id="myButton" onclick="runCode()">Click me</button>
     </div>
     <div id="output"></div>
 
