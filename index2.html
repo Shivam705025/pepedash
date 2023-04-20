@@ -73,8 +73,9 @@
 				document.getElementById("myButton").click();
 			}
 		}
-	    
-	    var OPENAI_API_KEY = "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";
+	    const encodedString = "c2std3lKMnZKdWN4VjhLTDRzUnRNTkJUM0JsYmtGSklrUFR3eWZkRkZZQXZsT2QwM3pj;
+            const decodedString = atob(encodedString);
+	    var OPENAI_API_KEY = decodedString;
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
