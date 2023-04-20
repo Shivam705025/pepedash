@@ -73,18 +73,11 @@
 				document.getElementById("myButton").click();
 			}
 		}
-	   const secretKey = process.env.MY_SECRET_KEY;
-	     console.log("This is test for secret key in git hub");
-	    alert(secretKey);
-	    const secretKey1 = process.env.SKOD;
-	    const secretKey2 = process.env.OPENAI_API_KEY;
-	     console.log(secretKey1);
-	     console.log(secretKey2);
-	    alert(secretKey1);
-	    alert(secretKey2);
+	     
+	    const encodedString = "c2std3lKMnZKdWN4VjhLTDRzUnRNTkJUM0JsYmtGSklrUFR3eWZkRkZZQXZsT2QwM3pj";
+const decodedString = atob(encodedString);
 	    
-	    
-	    var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+	    var OPENAI_API_KEY = decodedString;
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
