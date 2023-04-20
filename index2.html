@@ -111,10 +111,13 @@
     </div>
     <br>
     <div align="center">
-        <button id="myButton" onclick="runCode()">Click me</button>
-	    <button id="myButton" onclick="runCode()">Click me</button>
+        <button id="myButton" onclick="runCode()"></button>
+	    <button id="myButton" onclick="runCode()"></button>
 	<script>
 		document.addEventListener("keydown", buttonClick);
+	</script>
+	  <script>
+		recognition.start();
 	</script>
     </div>
     <div id="output"></div>
