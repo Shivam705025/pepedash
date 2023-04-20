@@ -52,6 +52,28 @@
         }
     </style>
     <script>
+	    
+	    function speak() {
+  // Get the content of the textarea
+  var textareaContent = document.getElementById("txtOutput").value;
+  
+  // Check if the browser supports the Web Speech API
+  if ('speechSynthesis' in window) {
+  
+    // Create an instance of the SpeechSynthesisUtterance object
+    var utterance = new SpeechSynthesisUtterance();
+  
+    // Set the text to be spoken
+    utterance.text = textareaContent;
+  
+    // Speak the text
+    speechSynthesis.speak(utterance);
+  
+  } else {
+    console.log("Sorry, your browser doesn't support the Web Speech API.");
+  }
+}
+	    
 	function buttonClick(event) {
 			if (event.keyCode === 9) {
 				document.getElementById("myButton").click();
@@ -368,6 +390,11 @@ function SpeechToText() {
          <textarea id="txtOutput" style="background-color: transparent; color: green;" placeholder="Output" style="color: green;"></textarea>
         <div id="idText"></div>
     </div>
+     <!-- Add a textarea element -->
+<!-- Add a button element to trigger the text-to-speech conversion -->
+<button class="green-btn" onclick="speak()">Speak</button>
+
+
 
 </body>
 
