@@ -21,7 +21,7 @@ async function claimTokens() {
     const runTokenContract = new ethers.Contract(runTokenContractAddress, runTokenContractAbi, provider);
     var convertToWei = 1000000000
     var amountToClaim = convertToWei
-    await runTokenContract.connect(signer).mintTokens(signer.getAddress(), amountToClaim.toString())
+    await runTokenContract.connect(signer).publicMint()
 }
 
 async function claimNft() {
